@@ -1,6 +1,11 @@
 from django.forms import ModelForm
-from cms.models import Book
+from cms.models import Book, Impression
 
+class ImpressionForm(ModelForm):
+    """感想のフォーム"""
+    class Meta:
+        model = Impression
+        fields = ('comment', )
 
 class BookForm(ModelForm):
     """書籍のフォーム"""
